@@ -32,8 +32,8 @@ function SinglePage() {
             </a>
           </nav>
           <div className="hidden md:flex items-center gap-3">
-            <a href="https://easyaikickstart.com" target="_blank" rel="noopener noreferrer" className="text-xs font-semibold bg-accent text-accent-foreground px-3 py-1.5 rounded-full border border-accent/50 hover:bg-accent/80 transition-colors whitespace-nowrap">
-              🚀 Launching on EasyAI Kickstart
+            <a href="https://kickstart.easya.io/" target="_blank" rel="noopener noreferrer" className="text-xs font-semibold bg-accent text-accent-foreground px-3 py-1.5 rounded-full border border-accent/50 hover:bg-accent/80 transition-colors whitespace-nowrap">
+              🚀 Launching on EasyA Kickstart
             </a>
             <Button onClick={() => scrollTo("play")} className="rounded-full px-6">
               Play Now
@@ -172,8 +172,8 @@ function SinglePage() {
           </nav>
 
           <div className="flex flex-col items-center md:items-end gap-2">
-            <a href="https://easyaikickstart.com" target="_blank" rel="noopener noreferrer" className="text-xs font-semibold bg-accent text-accent-foreground px-3 py-1.5 rounded-full hover:bg-accent/80 transition-colors whitespace-nowrap">
-              🚀 Launching on EasyAI Kickstart
+            <a href="https://kickstart.easya.io/" target="_blank" rel="noopener noreferrer" className="text-xs font-semibold bg-accent text-accent-foreground px-3 py-1.5 rounded-full hover:bg-accent/80 transition-colors whitespace-nowrap">
+              🚀 Launching on EasyA Kickstart
             </a>
             <div className="text-background/50 text-sm">
               &copy; 2025 HarvestFruit. All rights reserved.
