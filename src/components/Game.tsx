@@ -280,6 +280,13 @@ export default function Game() {
   }, [isPlaying, isGameOver]);
 
   const startGame = () => {
+    const audio = new Audio(`${import.meta.env.BASE_URL}sounds/game-start.mp3`);
+    audio.volume = 0.6;
+    audio.play().catch(() => {
+      // Autoplay can be blocked until the user has interacted with the page;
+      // the click that triggers startGame counts as that interaction in
+      // most browsers, so this catch is just a safety net.
+    });
     setIsPlaying(true);
     setIsGameOver(false);
     setScore(0);
