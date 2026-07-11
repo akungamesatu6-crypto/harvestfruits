@@ -101,62 +101,63 @@ function SinglePage() {
 
         {/* How to Play */}
         <section id="how-to-play" className="py-20 px-4 bg-primary text-primary-foreground">
-          <div className="container mx-auto max-w-4xl">
-            <div className="text-center mb-16">
+          <div className="container mx-auto max-w-5xl">
+            <div className="text-center mb-14">
+              <span className="inline-block text-xs font-bold uppercase tracking-widest bg-primary-foreground/15 px-4 py-1.5 rounded-full mb-4">
+                Quick Guide
+              </span>
               <h2 className="text-4xl md:text-5xl font-bold mb-4">How to Play</h2>
               <div className="h-2 w-24 bg-accent mx-auto rounded-full"></div>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-12">
-              <div className="space-y-8">
-                <div className="flex items-start gap-4">
-                  <div className="bg-primary-foreground text-primary w-12 h-12 rounded-full flex items-center justify-center text-2xl font-bold shrink-0 shadow-lg">
-                    1
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-semibold mb-2">Move the Basket</h3>
-                    <p className="text-primary-foreground/80 leading-relaxed">
-                      Use your <strong>Arrow Keys</strong> or <strong>A/D</strong>{' '}
-                      to slide left and right. On mobile, just{' '}
-                      <strong>tap and drag</strong> to move your basket.
-                    </p>
-                  </div>
+            <div className="grid md:grid-cols-2 gap-6 mb-6">
+              <div className="bg-primary-foreground/10 border border-primary-foreground/15 rounded-2xl p-6 flex items-start gap-4">
+                <div className="bg-primary-foreground text-primary w-12 h-12 rounded-full flex items-center justify-center text-2xl font-bold shrink-0 shadow-lg">
+                  1
                 </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="bg-primary-foreground text-primary w-12 h-12 rounded-full flex items-center justify-center text-2xl font-bold shrink-0 shadow-lg">
-                    2
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-semibold mb-2">Catch the Good Stuff</h3>
-                    <p className="text-primary-foreground/80 leading-relaxed">
-                      Every normal fruit is worth <strong>10 points</strong>.
-                      Don't let them hit the ground, or you'll lose a life!
-                    </p>
-                  </div>
+                <div>
+                  <h3 className="text-2xl font-semibold mb-2">Move the Basket</h3>
+                  <p className="text-primary-foreground/80 leading-relaxed">
+                    Use your <strong>Arrow Keys</strong> or <strong>A/D</strong>{' '}
+                    to slide left and right. On mobile, just{' '}
+                    <strong>tap and drag</strong> to move your basket.
+                  </p>
                 </div>
               </div>
 
-              <div className="space-y-8">
-                <div className="bg-white/10 p-6 rounded-2xl border border-white/20 backdrop-blur-sm">
-                  <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
-                    <span>🌟</span> Golden Fruits
-                  </h3>
-                  <p className="text-primary-foreground/90">
-                    Rare and delicious! Catch these for a massive{' '}
-                    <strong>50 point bonus</strong>.
+              <div className="bg-primary-foreground/10 border border-primary-foreground/15 rounded-2xl p-6 flex items-start gap-4">
+                <div className="bg-primary-foreground text-primary w-12 h-12 rounded-full flex items-center justify-center text-2xl font-bold shrink-0 shadow-lg">
+                  2
+                </div>
+                <div>
+                  <h3 className="text-2xl font-semibold mb-2">Catch the Good Stuff</h3>
+                  <p className="text-primary-foreground/80 leading-relaxed">
+                    Every normal fruit is worth <strong>10 points</strong>.
+                    Don't let them hit the ground, or you'll lose a life!
                   </p>
                 </div>
+              </div>
+            </div>
 
-                <div className="bg-black/20 p-6 rounded-2xl border border-black/10 backdrop-blur-sm">
-                  <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
-                    <span>☠️</span> Rotten Fruits
-                  </h3>
-                  <p className="text-primary-foreground/90">
-                    Watch out for the dark ones! Catching a rotten fruit
-                    instantly <strong>costs you 1 life</strong>.
-                  </p>
-                </div>
+            <div className="grid sm:grid-cols-2 gap-6">
+              <div className="bg-white/10 p-6 rounded-2xl border border-white/20 backdrop-blur-sm">
+                <h3 className="text-xl font-bold mb-3 flex items-center gap-2">
+                  <span className="text-2xl">🌟</span> Golden Fruits
+                </h3>
+                <p className="text-primary-foreground/90 leading-relaxed">
+                  Rare and delicious! Catch these for a massive{' '}
+                  <strong>50 point bonus</strong>.
+                </p>
+              </div>
+
+              <div className="bg-black/20 p-6 rounded-2xl border border-black/10 backdrop-blur-sm">
+                <h3 className="text-xl font-bold mb-3 flex items-center gap-2">
+                  <span className="text-2xl">☠️</span> Rotten Fruits
+                </h3>
+                <p className="text-primary-foreground/90 leading-relaxed">
+                  Watch out for the dark ones! Catching a rotten fruit
+                  instantly <strong>costs you 1 life</strong>.
+                </p>
               </div>
             </div>
           </div>
@@ -165,45 +166,52 @@ function SinglePage() {
         {/* Privacy Policy */}
         <section id="privacy" className="py-24 px-4 bg-card">
           <div className="container mx-auto max-w-3xl">
-            <div className="text-center mb-16">
+            <div className="text-center mb-14">
+              <span className="inline-block text-xs font-bold uppercase tracking-widest bg-muted-foreground/10 text-muted-foreground px-4 py-1.5 rounded-full mb-4">
+                Trust & Transparency
+              </span>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
                 Privacy & Legal
               </h2>
               <div className="h-1.5 w-16 bg-muted-foreground/30 mx-auto rounded-full"></div>
             </div>
 
+            <p className="text-center text-muted-foreground max-w-xl mx-auto mb-12 leading-relaxed">
+              Welcome to HarvestFruit! We believe games should be fun, safe,
+              and respect your privacy. This policy is simple because our
+              data practices are simple:
+            </p>
+
+            <div className="grid sm:grid-cols-3 gap-5 mb-14">
+              <div className="bg-background border border-border rounded-2xl p-6 text-center">
+                <div className="text-3xl mb-3">🔒</div>
+                <h3 className="font-semibold text-foreground mb-2">No Data Collection</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  We collect absolutely nothing. Everything happens locally in
+                  your browser.
+                </p>
+              </div>
+
+              <div className="bg-background border border-border rounded-2xl p-6 text-center">
+                <div className="text-3xl mb-3">🍪</div>
+                <h3 className="font-semibold text-foreground mb-2">No Tracking</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  No cookies, analytics scripts, or ad trackers. Your visit is
+                  your business.
+                </p>
+              </div>
+
+              <div className="bg-background border border-border rounded-2xl p-6 text-center">
+                <div className="text-3xl mb-3">🧒</div>
+                <h3 className="font-semibold text-foreground mb-2">Family Friendly</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Safe for all ages. No personal data means natural COPPA
+                  compliance.
+                </p>
+              </div>
+            </div>
+
             <div className="prose prose-slate lg:prose-lg max-w-none text-muted-foreground prose-headings:text-foreground prose-a:text-primary">
-              <h3>Privacy Policy</h3>
-              <p>
-                Welcome to HarvestFruit! We believe games should be fun, safe,
-                and respect your privacy. This policy is simple because our
-                data practices are simple:
-              </p>
-
-              <h4>Data Collection</h4>
-              <p>
-                <strong>We collect absolutely nothing.</strong> This is a
-                browser-only HTML5 game. All your progress, scores, and
-                gameplay happen entirely on your own device within your web
-                browser. We do not transmit any gameplay data to our servers.
-              </p>
-
-              <h4>Cookies & Tracking</h4>
-              <p>
-                We do not use tracking cookies, analytics scripts, or
-                third-party advertising trackers. Your visit is your business.
-              </p>
-
-              <h4>Children's Privacy</h4>
-              <p>
-                HarvestFruit is designed to be safe and enjoyable for all
-                ages. Since we do not collect any personal information, we
-                naturally comply with all children's privacy regulations
-                (like COPPA).
-              </p>
-
-              <hr className="my-8 border-border" />
-
               <h3>Terms of Service</h3>
               <p>
                 By playing HarvestFruit, you agree to have fun. The game is
@@ -249,7 +257,7 @@ function SinglePage() {
           </nav>
 
           <div className="text-background/50 text-sm">
-            &copy; 2025 HarvestFruit. All rights reserved.
+            &copy; 2026 HarvestFruit. All rights reserved.
           </div>
         </div>
       </footer>
