@@ -256,10 +256,12 @@ function SinglePage() {
             </a>
           </nav>
 
-          <div className="text-background/50 text-sm text-center md:text-right">
-            <div>&copy; 2026 HarvestFruit. All rights reserved.</div>
-            <div className="mt-1 font-mono text-xs text-background/30 break-all">
+          <div className="flex flex-col items-center md:items-end gap-2">
+            <span className="inline-block font-mono text-[11px] leading-relaxed text-background bg-background/15 border border-background/25 rounded-lg px-3 py-1.5 break-all max-w-full">
               {'<meta name="ory-verify" content="orynth-5e5f171211ef4654b16a135c63a56b26" />'}
+            </span>
+            <div className="text-background/50 text-sm text-center md:text-right">
+              &copy; 2026 HarvestFruit. All rights reserved.
             </div>
           </div>
         </div>
