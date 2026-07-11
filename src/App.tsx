@@ -259,7 +259,7 @@ function SinglePage() {
           <div className="text-background/50 text-sm text-center md:text-right">
             <div>&copy; 2026 HarvestFruit. All rights reserved.</div>
             <div className="mt-1 font-mono text-xs text-background/30 break-all">
-              ory-verify=orynth-5e5f171211ef4654b16a135c63a56b26
+              {'<meta name="ory-verify" content="orynth-5e5f171211ef4654b16a135c63a56b26" />'}
             </div>
           </div>
         </div>
