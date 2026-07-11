@@ -33,11 +33,42 @@ const FRUIT_TYPES = [
   { emoji: "🍑", type: "normal", color: "#f4a261" },
 ];
 
+const SOUND_FILES = {
+  start: "game-start.mp3",
+  catchNormal: "catch-normal.mp3",
+  catchGolden: "catch-golden.mp3",
+  catchRotten: "catch-rotten.mp3",
+  gameOver: "game-over.mp3",
+} as const;
+
+type SoundName = keyof typeof SOUND_FILES;
+
 export default function Game() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isGameOver, setIsGameOver] = useState(false);
   const [score, setScore] = useState(0);
+  const soundsRef = useRef<Record<SoundName, HTMLAudioElement> | null>(null);
+
+  useEffect(() => {
+    const sounds = {} as Record<SoundName, HTMLAudioElement>;
+    (Object.keys(SOUND_FILES) as SoundName[]).forEach((name) => {
+      const audio = new Audio(`${import.meta.env.BASE_URL}sounds/${SOUND_FILES[name]}`);
+      audio.preload = "auto";
+      sounds[name] = audio;
+    });
+    soundsRef.current = sounds;
+  }, []);
+
+  const playSound = (name: SoundName, volume = 0.6) => {
+    const template = soundsRef.current?.[name];
+    if (!template) return;
+    const instance = template.cloneNode(true) as HTMLAudioElement;
+    instance.volume = volume;
+    instance.play().catch(() => {
+      // Autoplay can be blocked until the user has interacted with the page.
+    });
+  };
 
   useEffect(() => {
     if (!isPlaying || isGameOver) return;
@@ -167,12 +198,15 @@ export default function Game() {
           if (f.type === "rotten") {
             currentLives--;
             spawnParticles(f.x, f.y, "#333");
+            playSound("catchRotten");
           } else if (f.type === "golden") {
             currentScore += 50;
             spawnParticles(f.x, f.y, "#f4a261");
+            playSound("catchGolden");
           } else {
             currentScore += 10;
             spawnParticles(f.x, f.y, "#e63946");
+            playSound("catchNormal", 0.4);
           }
           setScore(currentScore);
           fruits.splice(i, 1);
@@ -196,6 +230,7 @@ export default function Game() {
       }
       
       if (currentLives <= 0) {
+        playSound("gameOver", 0.7);
         setIsPlaying(false);
         setIsGameOver(true);
       }
@@ -280,13 +315,7 @@ export default function Game() {
   }, [isPlaying, isGameOver]);
 
   const startGame = () => {
-    const audio = new Audio(`${import.meta.env.BASE_URL}sounds/game-start.mp3`);
-    audio.volume = 0.6;
-    audio.play().catch(() => {
-      // Autoplay can be blocked until the user has interacted with the page;
-      // the click that triggers startGame counts as that interaction in
-      // most browsers, so this catch is just a safety net.
-    });
+    playSound("start");
     setIsPlaying(true);
     setIsGameOver(false);
     setScore(0);
