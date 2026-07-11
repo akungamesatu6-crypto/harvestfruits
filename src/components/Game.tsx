@@ -49,6 +49,7 @@ export default function Game() {
   const [isGameOver, setIsGameOver] = useState(false);
   const [score, setScore] = useState(0);
   const soundsRef = useRef<Record<SoundName, HTMLAudioElement> | null>(null);
+  const bgMusicRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
     const sounds = {} as Record<SoundName, HTMLAudioElement>;
@@ -58,6 +59,17 @@ export default function Game() {
       sounds[name] = audio;
     });
     soundsRef.current = sounds;
+
+    const bgMusic = new Audio(`${import.meta.env.BASE_URL}sounds/background-music.mp3`);
+    bgMusic.loop = true;
+    bgMusic.volume = 0.25;
+    bgMusic.preload = "auto";
+    bgMusicRef.current = bgMusic;
+
+    return () => {
+      bgMusic.pause();
+      bgMusicRef.current = null;
+    };
   }, []);
 
   const playSound = (name: SoundName, volume = 0.6) => {
@@ -69,6 +81,20 @@ export default function Game() {
       // Autoplay can be blocked until the user has interacted with the page.
     });
   };
+
+  useEffect(() => {
+    const bgMusic = bgMusicRef.current;
+    if (!bgMusic) return;
+
+    if (isPlaying && !isGameOver) {
+      bgMusic.currentTime = 0;
+      bgMusic.play().catch(() => {
+        // Autoplay can be blocked until the user has interacted with the page.
+      });
+    } else {
+      bgMusic.pause();
+    }
+  }, [isPlaying, isGameOver]);
 
   useEffect(() => {
     if (!isPlaying || isGameOver) return;
